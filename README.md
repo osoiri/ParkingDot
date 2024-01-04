@@ -12,22 +12,32 @@
 #### Nouns/Verbs
 
 - Vehicle
-    A vehicle class needed to keep it ready for future when more than the CarId can be taken.
+
+    A vehicle class needed to keep it ready for future when more than the CarId can be taken
 - ParkingTicket -------> Vehicle, ParkingFloor
+    
     A parking ticket which has vehicle details + where to park
 - ParkingLot -------> ParkingFloor, Gate
+    
     Contains all info about the whole area
 - ParkingFloor --------> ParkingSpot
+    
     Contains info about the spots on the specific floor
 - ParkingSpot
+    
     Contains specific information about the spot
 - ParkingAttendant
-    An physical employee associated with serving the user and closing the gap between real world and software world
+    
+    A physical employee associated with serving the user and closing the gap between real world and software world
 - Bill
+    
     Generated when vehicle arrives at the payment counter
 - Receipt
+    
     Generated after payment successful
 - ParkingGate
+    
     Gates to control flow of vehicles
 - GateCounter
+    
     To collect payment at the exit gate
