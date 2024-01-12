@@ -14,9 +14,9 @@
 - Vehicle
 
     A vehicle class needed to keep it ready for future when more than the CarId can be taken
-- ParkingTicket -------> Vehicle, ParkingFloor
+- ParkingTicket -------> Vehicle, ParkingFloor, ParkingSpot, ParkingGate, ParkingAttendant
     
-    A parking ticket which has vehicle details + where to park
+    A parking ticket which has vehicle details + where to park + where ticket was generated and by whom
 - ParkingLot -------> ParkingFloor, Gate
     
     Contains all info about the whole area
@@ -29,13 +29,16 @@
 - ParkingAttendant
     
     A physical employee associated with serving the user and closing the gap between real world and software world
-- Bill
+- Bill -------> Ticket
     
-    Generated when vehicle arrives at the payment counter
-- Receipt
+    Generated with reference to the ticket when vehicle arrives at the gateCounter
+- Payment -------> Bill
+
+    The payment to be done by the user with his choice
+- Receipt -------> Payment
     
     Generated after payment successful
-- ParkingGate
+- ParkingGate -------> GateCounter, ParkingAttendant
     
     Gates to control flow of vehicles
 - GateCounter
