@@ -16,4 +16,12 @@ public class Vehicle {
     public VehicleType getVehicleType() {
         return vehicleType;
     }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "vehicleNumber='" + vehicleNumber + '\'' +
+                ", vehicleType=" + vehicleType +
+                '}';
+    }
 }

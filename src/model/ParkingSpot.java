@@ -30,4 +30,13 @@ public class ParkingSpot {
     public void setSpotStatus(SpotStatus spotStatus) {
         this.spotStatus = spotStatus;
     }
+
+    @Override
+    public String toString() {
+        return "ParkingSpot{" +
+                "spotId=" + spotId +
+                ", spotType=" + spotType +
+                ", spotStatus=" + spotStatus +
+                '}';
+    }
 }

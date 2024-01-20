@@ -2,19 +2,21 @@ package model;
 
 import java.util.List;
 
-public class ParkingFloor {
-    private final int floorId;
+public class ParkingZone {
+    private final String zoneId;
     private final List<ParkingSpot> parkingSpots;
     private FloorStatus floorStatus;
+    private VehicleType zoneType;
 
-    public ParkingFloor(int floorId, List<ParkingSpot> parkingSpots) {
-        this.floorId = floorId;
+    public ParkingZone(String zoneId, List<ParkingSpot> parkingSpots, VehicleType zoneType) {
+        this.zoneId = zoneId;
         this.parkingSpots = parkingSpots;
         this.floorStatus = FloorStatus.OK;
+        this.zoneType = zoneType;
     }
 
-    public int getFloorId() {
-        return floorId;
+    public String getZoneId() {
+        return zoneId;
     }
 
     public List<ParkingSpot> getParkingSpots() {
@@ -25,7 +27,15 @@ public class ParkingFloor {
         return floorStatus;
     }
 
+    public VehicleType getZoneType() {
+        return zoneType;
+    }
+
     public void setFloorStatus(FloorStatus floorStatus) {
         this.floorStatus = floorStatus;
+    }
+
+    public void setZoneType(VehicleType zoneType) {
+        this.zoneType = zoneType;
     }
 }

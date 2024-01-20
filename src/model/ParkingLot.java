@@ -5,14 +5,14 @@ import java.util.List;
 public class ParkingLot {
     private String name;
     private String address;
-    private final List<ParkingFloor> parkingFloors;
+    private final List<ParkingZone> parkingZones;
     private final List<ParkingGate> entryGates;
     private final List<ParkingGate> exitGates;
 
-    public ParkingLot(String name, String address, List<ParkingFloor> parkingFloors, List<ParkingGate> entryGates, List<ParkingGate> exitGates) {
+    public ParkingLot(String name, String address, List<ParkingZone> parkingZones, List<ParkingGate> entryGates, List<ParkingGate> exitGates) {
         this.name = name;
         this.address = address;
-        this.parkingFloors = parkingFloors;
+        this.parkingZones = parkingZones;
         this.entryGates = entryGates;
         this.exitGates = exitGates;
     }
@@ -25,8 +25,8 @@ public class ParkingLot {
         return address;
     }
 
-    public List<ParkingFloor> getParkingFloors() {
-        return parkingFloors;
+    public List<ParkingZone> getParkingZones() {
+        return parkingZones;
     }
 
     public List<ParkingGate> getEntryGates() {

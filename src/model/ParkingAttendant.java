@@ -16,4 +16,12 @@ public class ParkingAttendant {
     public String getEmail() {
         return email;
     }
+
+    @Override
+    public String toString() {
+        return "ParkingAttendant{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

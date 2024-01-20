@@ -9,14 +9,18 @@ public class Bill {
     private final double amount;
     private final ParkingGate exitGate;
     private final ParkingAttendant exitAttendant;
+    private final PaymentCounter exitCounter;
 
-    public Bill(String billId, Ticket ticket, OffsetDateTime timestamp, double amount, ParkingGate exitGate, ParkingAttendant exitAttendant) {
+    public Bill(String billId, Ticket ticket, OffsetDateTime timestamp,
+                double amount, ParkingGate exitGate, ParkingAttendant exitAttendant,
+                PaymentCounter exitCounter) {
         this.billId = billId;
         this.ticket = ticket;
         this.timestamp = timestamp;
         this.amount = amount;
         this.exitGate = exitGate;
         this.exitAttendant = exitAttendant;
+        this.exitCounter = exitCounter;
     }
 
     public String getBillId() {
@@ -41,5 +45,9 @@ public class Bill {
 
     public ParkingAttendant getExitAttendant() {
         return exitAttendant;
+    }
+
+    public PaymentCounter getExitCounter() {
+        return exitCounter;
     }
 }

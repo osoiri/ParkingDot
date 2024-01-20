@@ -47,4 +47,23 @@ public class ParkingGate {
     public void setGateStatus(GateStatus gateStatus) {
         this.gateStatus = gateStatus;
     }
+
+    @Override
+    public String toString() {
+        if (this.gateType == GateType.EXIT) {
+            return "ParkingGate{" +
+                    "id=" + id +
+                    ", paymentCounters=" + paymentCounters +
+                    ", parkingAttendant=" + parkingAttendant +
+                    ", gateType=" + gateType +
+                    ", gateStatus=" + gateStatus +
+                    '}';
+        } else {
+            return "ParkingGate{" +
+                    "id=" + id +
+                    ", gateType=" + gateType +
+                    ", gateStatus=" + gateStatus +
+                    '}';
+        }
+    }
 }
