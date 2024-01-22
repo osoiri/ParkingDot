@@ -7,8 +7,20 @@ import repository.GateRepository;
 
 public class GateService {
     private final GateRepository gateRepository;
+    private static GateService gateService = null;
 
-    public GateService() {
+    public static GateService getGateService() {
+        if (gateService == null) {
+            synchronized (GateService.class) {
+                if (gateService == null) {
+                    gateService = new GateService();
+                }
+            }
+        }
+        return gateService;
+    }
+
+    private GateService() {
         this.gateRepository = new GateRepository();
     }
 

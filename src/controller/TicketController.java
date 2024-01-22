@@ -9,8 +9,8 @@ public class TicketController {
     private final GateService gateService;
 
     public TicketController() {
-        this.ticketService = new TicketService();
-        this.gateService = new GateService();
+        this.ticketService = TicketService.getTicketService();
+        this.gateService = GateService.getGateService();
     }
 
     public Ticket generateTicket(Vehicle vehicle, int gateId) {

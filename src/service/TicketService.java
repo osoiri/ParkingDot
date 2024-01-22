@@ -11,9 +11,22 @@ public class TicketService {
     private final ParkingZoneRepository parkingZoneRepository;
     private final TicketRepository ticketRepository;
 
-    public TicketService() {
+    public static TicketService ticketService = null;
+
+    private TicketService() {
         this.parkingZoneRepository = new ParkingZoneRepository();
         this.ticketRepository = new TicketRepository();
+    }
+
+    public static TicketService getTicketService() {
+        if (ticketService == null) {
+            synchronized (TicketService.class) {
+                if (ticketService == null) {
+                    ticketService = new TicketService();
+                }
+            }
+        }
+        return ticketService;
     }
 
     synchronized public Ticket createTicket(ParkingGate parkingGate, Vehicle vehicle) {
@@ -44,5 +57,9 @@ public class TicketService {
                 .build();
         ticketRepository.addTicket(ticket);
         return ticket;
+    }
+
+    public Ticket getTicket(String ticketId) {
+        return ticketRepository.getTicketById(ticketId);
     }
 }

@@ -29,4 +29,13 @@ public class PaymentCounter {
     public void setParkingAttendant(ParkingAttendant parkingAttendant) {
         this.parkingAttendant = parkingAttendant;
     }
+
+    @Override
+    public String toString() {
+        return "PaymentCounter{" +
+                "counterId=" + counterId +
+                ", counterStatus=" + counterStatus +
+                ", parkingAttendant=" + parkingAttendant +
+                '}';
+    }
 }

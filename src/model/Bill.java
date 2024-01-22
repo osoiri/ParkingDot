@@ -50,4 +50,17 @@ public class Bill {
     public PaymentCounter getExitCounter() {
         return exitCounter;
     }
+
+    @Override
+    public String toString() {
+        return "Bill{" +
+                "billId='" + billId + '\'' +
+                ", ticket=" + ticket +
+                ", timestamp=" + timestamp +
+                ", amount=" + amount +
+                ", exitGate=" + exitGate +
+                ", exitAttendant=" + exitAttendant +
+                ", exitCounter=" + exitCounter +
+                '}';
+    }
 }

@@ -1,14 +1,25 @@
 package controller;
 
-import model.Bill;
-import model.PaymentMode;
-import model.Receipt;
+import model.*;
+import service.GateService;
+import service.PaymentService;
+import service.TicketService;
 
 public class PaymentController {
-    public void generateBill(String ticketId, int gateId) {
-        //get Gate
-        //get Ticket
-        //generateBill
+    private final GateService gateService;
+    private final TicketService ticketService;
+    private final PaymentService paymentService;
+
+    public PaymentController() {
+        this.gateService = GateService.getGateService();
+        this.ticketService = TicketService.getTicketService();
+        this.paymentService = new PaymentService();
+    }
+
+    public Bill generateBill(String ticketId, int gateId) {
+        ParkingGate gate = gateService.getGate(gateId);
+        Ticket ticket = ticketService.getTicket(ticketId);
+        return paymentService.generateBill(ticket, gate);
     }
 
     public void postPayment(Bill bill, PaymentMode paymentMode) {
